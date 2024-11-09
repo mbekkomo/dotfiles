@@ -18,8 +18,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    refind
-    gptfdisk
     efibootmgr
   ];
 
