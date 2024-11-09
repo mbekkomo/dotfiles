@@ -8,6 +8,9 @@
 
   boot.loader.systemd-boot.enable = lib.mkDefault false;
   boot.loader.refind.enable = true;
+  boot.loader.refind.extraConfig = ''
+    enable_touch true
+  '';
   boot.loader.efi.canTouchEfiVariables = true;
 
   nixpkgs.config.allowUnfree = true;
