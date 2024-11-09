@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -6,10 +6,8 @@
 
   system.stateVersion = "24.05";
 
-  boot.loader.external = {
-    enable = true;
-    installHook = "${pkgs.refind}/bin/refind-install";
-  };
+  boot.loader.systemd-boot.enable = lib.mkDefault false;
+  boot.loader.refind.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -20,6 +18,8 @@
 
   environment.systemPackages = with pkgs; [
     git
+    refind
+    gptfdisk
     efibootmgr
   ];
 
