@@ -11,7 +11,7 @@
     { self, nixpkgs, nix-flatpak, ... }@inputs:
     let
       system = "x86_64-linux";
-      refindCommit = "https://gist.github.com/betaboon/97abed457de8be43f89e7ca49d33d58d/raw/5a690248b9072ab5ebb5200cfc8a76361d720a89/refind.nix";
+      refindCommit = "5a690248b9072ab5ebb5200cfc8a76361d720a89";
     in
     {
       nixosConfigurations.goat = nixpkgs.lib.nixosSystem {
