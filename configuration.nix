@@ -49,6 +49,7 @@
     "io.github.zen_browser.zen"  # Browser
     "io.github.equicord.equibop" # Discord
     "im.fluffychat.Fluffychat"   # Matrix
+    "dev.toastbits.spmp"
   ];
   
   xdg.portal.enable = true;
