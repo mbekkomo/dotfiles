@@ -88,7 +88,10 @@ in
     };
   };
 
-  services.arrpc.enable = true;
+  services.arrpc = {
+    enable = true;
+    # systemdTarget = "default.target";
+  };
 
   programs.helix = {
     enable = true;
