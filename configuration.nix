@@ -6,7 +6,10 @@
 
   system.stateVersion = "24.05";
 
-  boot
+  boot.loader.external = {
+    enable = true;
+    installHook = "${pkgs.refind}/bin/refind-install";
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   nixpkgs.config.allowUnfree = true;
