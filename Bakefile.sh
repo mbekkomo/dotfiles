@@ -1,3 +1,3 @@
 task.switch() {
-  nixos-rebuild --flake .#goat --impure
+  nixos-rebuild switch --flake .#goat --impure
 }
