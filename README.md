@@ -1,4 +1,4 @@
-Welcome to config for my HP 240 G5 Laptop :3
+Welcome to config for my HP 240 G5 Notebook :3
 
 To use the dotfiles, run
 ```sh
