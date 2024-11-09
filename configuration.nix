@@ -15,6 +15,11 @@
     "flakes"
   ];
 
+  environment.systemPackages = with pkgs; [
+    git
+    efibootmgr
+  ];
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Makassar";
@@ -46,12 +51,12 @@
 
   services.flatpak.enable = true;
   services.flatpak.packages = [
-    "io.github.zen_browser.zen"  # Browser
+    "io.github.zen_browser.zen" # Browser
     "io.github.equicord.equibop" # Discord
-    "im.fluffychat.Fluffychat"   # Matrix
+    "im.fluffychat.Fluffychat" # Matrix
     "dev.toastbits.spmp"
   ];
-  
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
     xdg-desktop-portal-gtk
@@ -74,9 +79,6 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
-  ];
-  environment.systemPackages = with pkgs; [
-    git
   ];
 
   programs.gnupg.agent = {
