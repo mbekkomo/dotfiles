@@ -5,9 +5,13 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs }:
+  let
+    system = "x86_64-linux";
+  in
+  {
     nixosConfigurations.goat = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system;
       modules = [
         ./configuration.nix
       ];
