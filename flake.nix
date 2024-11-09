@@ -11,8 +11,7 @@
     { self, nixpkgs, nix-flatpak, ... }@inputs:
     let
       system = "x86_64-linux";
-      refindCommit = "5a690248b9072ab5ebb5200cfc8a76361d720a89";
-      refindTarballSha256 = "8f539dc72d1a1d56adb8d434b4ba85bd3e63cf6d";
+      refindCommit = "8f539dc72d1a1d56adb8d434b4ba85bd3e63cf6d";
     in
     {
       nixosConfigurations.goat = nixpkgs.lib.nixosSystem {
@@ -21,7 +20,6 @@
           nix-flatpak.nixosModules.nix-flatpak
           (builtins.fetchTarball {
             url = "https://gist.github.com/mbekkomo/ba3d86f021aec0f73ceec4047365ef5b/archive/${refindCommit}.tar.gz";
-            sha256 = refindTarballSha256;
           } + "/refind.nix")
           ./configuration.nix
         ];
