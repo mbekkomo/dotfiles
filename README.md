@@ -1,10 +1,6 @@
-Welcome to config for my HP 240 G5 Notebook :3
+Make sure you've installed Nix with flakes support
 
-To use the dotfiles, run
+To use, run
 ```sh
-./bake switch.hm
-```
-To use the NixOS config, run
-```sh
-./bake switch.nixos
+./bake switch
 ```
