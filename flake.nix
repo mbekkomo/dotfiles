@@ -18,7 +18,7 @@
         inherit system;
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
-          builtins.fetchurl "https://gist.github.com/betaboon/97abed457de8be43f89e7ca49d33d58d/raw/${refindCommit}/refind.nix"
+          (builtins.fetchurl "https://gist.github.com/betaboon/97abed457de8be43f89e7ca49d33d58d/raw/${refindCommit}/refind.nix")
           ./configuration.nix
         ];
       };
