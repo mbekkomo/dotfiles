@@ -18,9 +18,6 @@
         inherit system;
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
-          (builtins.fetchTarball {
-            url = "https://gist.github.com/mbekkomo/ba3d86f021aec0f73ceec4047365ef5b/archive/${refindCommit}.tar.gz";
-          } + "/refind.nix")
           ./configuration.nix
         ];
       };
