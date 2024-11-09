@@ -6,8 +6,6 @@
 
   system.stateVersion = "24.05";
 
-  boot.loader.refind.enable = true;
-  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
 
   nixpkgs.config.allowUnfree = true;
