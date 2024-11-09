@@ -6,6 +6,7 @@
 
   system.stateVersion = "24.05";
 
+  boot
   boot.loader.efi.canTouchEfiVariables = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -16,8 +17,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    refind
-    gptfdisk
     efibootmgr
   ];
 
