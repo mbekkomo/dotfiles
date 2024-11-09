@@ -4,8 +4,16 @@
     ./hardware-configuration.nix
   ];
 
+  system.stateVersion = "24.05";
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   networking.networkmanager.enable = true;
 
@@ -32,8 +40,21 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-
   };
+
+  services.openssh.enable = true;
+
+  services.flatpak.enable = true;
+  services.flatpak.packages = [
+    "io.github.zen_browser.zen"  # Browser
+    "io.github.equicord.equibop" # Discord
+    "im.fluffychat.Fluffychat"   # Matrix
+  ];
+  
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+  ];
 
   users.users.komo = {
     isNormalUser = true;
@@ -50,15 +71,8 @@
 
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
-  ];
-
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
   ];
   environment.systemPackages = with pkgs; [
     git
@@ -68,12 +82,4 @@
     enable = true;
     enableSSHSupport = true;
   };
-
-  services.openssh.enable = true;
-
-  services.flatpak.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
-  ];
 }
