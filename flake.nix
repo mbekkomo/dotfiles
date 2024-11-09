@@ -18,6 +18,7 @@
         inherit system;
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
+          (builtins.fetchTarball { url = refindCommit; } + /refind.nix)
           ./configuration.nix
         ];
       };
