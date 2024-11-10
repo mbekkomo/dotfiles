@@ -240,6 +240,7 @@ in
     settings = {
       source = "${pkgs.hyprland}/share/hypr/hyprland.conf";
       "$terminal" = "alacritty";
+      importantPrefixes = [ "source" "$" "beizer" "name" ];
     };
 #     extraConfig = ''            
 #       # This is an example Hyprland config file.
