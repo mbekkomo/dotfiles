@@ -18,6 +18,19 @@ let
       runHook postInstall
     '';
   };
+  departure-nf-mono = pkgs.departure-mono.overrideAttrs {
+    pname = "departure-nerd-font";
+    nativeBuildInputs = [ pkgs.nerd-font-patcher ];
+    installPhase = ''
+      runHook preInstall
+
+      nerd-font-patcher --mono -c *.otf -out $out/share/fonts/otf
+      nerd-font-patcher --mono -c *.woff -out $out/share/woff || true
+      nerd-font-patcher --mono -c *.woff2 -out $out/share/woff2 || true
+
+      runHook postInstall
+    '';
+  };
 in
 {
   imports = [
@@ -70,7 +83,10 @@ in
   services.kmscon.enable = true;
   services.kmscon.hwRender = true;
   services.kmscon.fonts = [
-    { name = "Departure Mono Nerd Font"; package = departure-nf; }
+    {
+      name = "Departure Mono Nerd Font";
+      package = departure-nf;
+    }
   ];
 
   services.xserver.desktopManager.xfce.enable = true;
@@ -103,7 +119,7 @@ in
     "io.github.zen_browser.zen" # Browser
     "io.github.equicord.equibop" # Discord
     "im.fluffychat.Fluffychat" # Matrix
-    "dev.toastbits.spmp"
+    "dev.toastbits.spmp" # Music
   ];
 
   xdg.portal.enable = true;
