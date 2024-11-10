@@ -54,6 +54,7 @@ in
     dolphin
     kdePackages.polkit-kde-agent-1
     pamixer
+    wl-clipboard
   ];
 
   home.file = {
