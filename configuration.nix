@@ -4,6 +4,21 @@
   lib,
   ...
 }:
+let
+  departure-nf = pkgs.departure-mono.overrideAttrs {
+    pname = "departure-nerd-font";
+    nativeBuildInputs = [ pkgs.nerd-font-patcher ];
+    installPhase = ''
+      runHook preInstall
+
+      nerd-font-patcher -c *.otf -out $out/share/fonts/otf
+      nerd-font-patcher -c *.woff -out $out/share/woff || true
+      nerd-font-patcher -c *.woff2 -out $out/share/woff2 || true
+
+      runHook postInstall
+    '';
+  };
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -30,6 +45,10 @@
     refind
     gptfdisk
     efibootmgr
+  ];
+
+  fonts.packages = with pkgs; [
+    departure-nf
   ];
 
   networking.networkmanager.enable = true;
