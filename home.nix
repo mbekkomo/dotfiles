@@ -23,8 +23,8 @@ let
       runHook preInstall
 
       nerd-font-patcher -c *.otf -out $out/share/fonts/otf
-      nerd-font-patcher -c *.woff -out $out/share/woff
-      nerd-font-patcher -c *.woff2 -out $out/share/woff2
+      nerd-font-patcher -c *.woff -out $out/share/woff || true
+      nerd-font-patcher -c *.woff2 -out $out/share/woff2 || true
 
       runHook postInstall
     '';
