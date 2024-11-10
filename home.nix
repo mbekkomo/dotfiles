@@ -250,7 +250,7 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     # TODO: Migrate to Nix expression
-    settings = import ./configs/hyprland.nix { inherit pkgs; };
+    settings = import ./configs/hyprland.nix { };
     importantPrefixes = [
       "source"
       "$"
