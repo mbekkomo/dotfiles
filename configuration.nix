@@ -143,6 +143,7 @@ in
 
   fonts.packages = with pkgs; [
     departure-nf
+    departure-nf-mono
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
