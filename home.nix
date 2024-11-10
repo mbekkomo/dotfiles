@@ -17,6 +17,16 @@ let
     };
     src = passthru.sources."x86_64-linux";
   };
+  departure-nf = pkgs.departure-mono.overrideAttrs {
+    nativeBuildInputs = [ pkgs.nerd-font-patcher ];
+    buildPhase = ''
+      runHook preBuild
+
+      
+
+      runHook postBuild
+    '';
+  };
 in
 {
   programs.home-manager.enable = true;
@@ -84,6 +94,8 @@ in
     enable = true;
     # systemdTarget = "default.target";
   };
+
+  fonts.fontconfig.enable = true;
 
   programs.helix = {
     enable = true;
