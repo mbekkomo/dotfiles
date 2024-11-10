@@ -235,4 +235,11 @@ in
       rdl = "repo delete --yes";
     };
   };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = {
+      "$terminal" = "alacritty";
+    };
+  };
 }
