@@ -250,7 +250,10 @@ in
 
   services.dunst.enable = true;
 
-  programs.eww.enable = true;
+  programs.eww = {
+    enable = true;
+    package = pkgs.eww-wayland;
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
