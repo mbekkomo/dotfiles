@@ -249,6 +249,7 @@ in
   };
 
   services.dunst.enable = true;
+
   programs.eww.enable = true;
 
   wayland.windowManager.hyprland = {
