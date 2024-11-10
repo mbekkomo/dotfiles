@@ -68,7 +68,7 @@ in
   ];
 
   services.dnscrypt-proxy2.enable = true;
-  services.dnscryp-proxy2.settings = {
+  services.dnscrypt-proxy2.settings = {
     ipv6_servers = true;
     require_dnssec = true;
     sources.public-resolvers = {
