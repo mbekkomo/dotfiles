@@ -39,10 +39,12 @@
   services.greetd.enable = true;
   services.greetd.settings = {
     default_session = {
-      command = "${pkgs.cage}/bin/cage -s -- ${pkgs.regreet}/bin/regreet";
+      command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.regreet}/bin/regreet";
       user = "greeter";
     };
   };
+
+  programs.regreet.enable = true;
   
   services.xserver.desktopManager.xfce.enable = true;
 
