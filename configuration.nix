@@ -10,7 +10,6 @@
   boot.loader.refind.enable = true;
   boot.loader.refind.extraConfig = ''
     enable_touch true
-    scanfor external,manual
     include themes/rEFInd-minimal-dark/theme.conf
   '';
   boot.loader.efi.canTouchEfiVariables = true;
@@ -44,6 +43,12 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+  };
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    systemd.enable = true;
   };
 
   services.printing.enable = true;
