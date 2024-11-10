@@ -53,6 +53,7 @@ in
     sigi
     dolphin
     kdePackages.polkit-kde-agent-1
+    pamixer
   ];
 
   home.file = {
