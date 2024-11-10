@@ -113,7 +113,6 @@ in
     extraGroups = [
       "networkmanager"
       "wheel"
-      "audio"
     ];
     packages =
       with pkgs;
