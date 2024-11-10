@@ -25,13 +25,7 @@ in
   home.stateVersion = "24.05"; # do not change
 
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "node" ''
-      exec ${bun.out}/bin/bun "$@"
-    '')
     etcpkgs.nix-search
-
-    (wrapGL blackbox-terminal)
-
     nixfmt-rfc-style
     shellcheck
     moar
@@ -43,6 +37,7 @@ in
     zoxide
     bat
     sigi
+    dolphin
   ];
 
   home.file = {
@@ -236,9 +231,17 @@ in
     };
   };
 
+  programs.wofi = {
+    enable = true;
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     # TODO: Migrate to Nix expression
+    settings = {
+      source = "${pkgs.hyprland}/share/hypr/hyprland.conf";
+      terminal = "alacritty";   
+    };
     extraConfig = ''            
       # This is an example Hyprland config file.
       # Refer to the wiki for more information.
