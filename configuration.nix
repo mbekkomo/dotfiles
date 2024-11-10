@@ -83,6 +83,7 @@ in
   services.printing.enable = true;
 
   hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -113,6 +114,7 @@ in
     extraGroups = [
       "networkmanager"
       "wheel"
+      "audio"
     ];
     packages =
       with pkgs;
