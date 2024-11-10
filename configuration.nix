@@ -36,7 +36,14 @@
 
   services.xserver.enable = true;
 
-  services.xserver.displayManager.lightdm.enable = true;
+  services.greetd.enable = true;
+  services.greetd.settings = {
+    default_session = {
+      command = "${pkgs.cage}/bin/cage -s -- ${pkgs.regreet}/bin/regreet";
+      user = "greeter";
+    };
+  };
+  
   services.xserver.desktopManager.xfce.enable = true;
 
   services.xserver.xkb = {
