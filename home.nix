@@ -19,12 +19,14 @@ let
   };
   departure-nf = pkgs.departure-mono.overrideAttrs {
     nativeBuildInputs = [ pkgs.nerd-font-patcher ];
-    buildPhase = ''
-      runHook preBuild
+    installPhase = ''
+      runHook preInstall
 
-      
+      nerd-font-patcher -c *.otf -out $out/share/fonts/otf
+      nerd-font-patcher -c *.woff -out $out/share/woff
+      nerd-font-patcher -c *.woff2 -out $out/share/woff2
 
-      runHook postBuild
+      runHook postInstall
     '';
   };
 in
@@ -36,6 +38,7 @@ in
 
   home.packages = with pkgs; [
     etcpkgs.nix-search
+    departure-nf
     nixfmt-rfc-style
     shellcheck
     moar
