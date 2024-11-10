@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -37,7 +42,11 @@
 
   services.greetd.enable = true;
   programs.regreet.enable = true;
-  
+
+  services.kmscon.enable = true;
+  services.kmscon.hwRender = true;
+
+
   services.xserver.desktopManager.xfce.enable = true;
 
   services.xserver.xkb = {
