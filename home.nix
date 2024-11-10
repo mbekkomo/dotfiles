@@ -52,6 +52,7 @@ in
     bat
     sigi
     dolphin
+    kdePackages.polkit-kde-agent-1
   ];
 
   home.file = {
