@@ -37,7 +37,6 @@
   services.xserver.enable = true;
 
   services.greetd.enable = true;
-
   programs.regreet.enable = true;
   
   services.xserver.desktopManager.xfce.enable = true;
