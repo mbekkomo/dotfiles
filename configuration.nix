@@ -58,8 +58,8 @@ in
   services.greetd.enable = true;
   programs.regreet.enable = true;
   programs.regreet = {
-    iconTheme = "Adwaita-Dark";
-    theme = "Adwaita-Dark";
+    iconTheme.name = "Adwaita-Dark";
+    theme.name = "Adwaita-Dark";
   };
 
   services.kmscon.enable = true;
