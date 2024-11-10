@@ -239,7 +239,7 @@ in
     # TODO: Migrate to Nix expression
     settings = {
       source = "${pkgs.hyprland}/share/hypr/hyprland.conf";
-      terminal = "alacritty";   
+      "$terminal" = "alacritty";
     };
 #     extraConfig = ''            
 #       # This is an example Hyprland config file.
