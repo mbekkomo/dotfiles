@@ -64,7 +64,9 @@ in
 
   services.kmscon.enable = true;
   services.kmscon.hwRender = true;
-
+  services.kmscon.fonts = [
+    { name = "Departure Mono Nerd Font"; package = departure-nf; }
+  ];
 
   services.xserver.desktopManager.xfce.enable = true;
 
