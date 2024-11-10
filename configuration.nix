@@ -47,10 +47,6 @@ in
     efibootmgr
   ];
 
-  fonts.packages = with pkgs; [
-    departure-nf
-  ];
-
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Makassar";
@@ -121,6 +117,7 @@ in
   };
 
   fonts.packages = with pkgs; [
+    departure-nf
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
