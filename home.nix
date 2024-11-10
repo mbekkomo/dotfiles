@@ -237,11 +237,13 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     # TODO: Migrate to Nix expression
-    settings = {
+    settings = [
+    {
       source = "${pkgs.hyprland}/share/hypr/hyprland.conf";
+    }
+    {
       "$terminal" = "alacritty";
-      importantPrefixes = [ "source" "$" "beizer" "name" ];
-    };
+    }];
 #     extraConfig = ''            
 #       # This is an example Hyprland config file.
 #       # Refer to the wiki for more information.
