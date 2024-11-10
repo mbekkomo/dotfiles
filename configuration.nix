@@ -11,7 +11,7 @@
   boot.loader.refind.extraConfig = ''
     enable_touch true
     scanfor external,manual
-    ${builtins.readFile ./etc/refind/theme-minimal/rEFInd-minimal-dark/theme.conf}
+    include themes/rEFInd-minimal-dark/theme.conf
   '';
   boot.loader.efi.canTouchEfiVariables = true;
 
