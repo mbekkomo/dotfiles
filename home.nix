@@ -247,6 +247,8 @@ in
     enable = true;
   };
 
+  services.dunst.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     # TODO: Migrate to Nix expression
