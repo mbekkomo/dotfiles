@@ -18,6 +18,7 @@ let
     src = passthru.sources."x86_64-linux";
   };
   departure-nf = pkgs.departure-mono.overrideAttrs {
+    pname = "departure-nerd-font";
     nativeBuildInputs = [ pkgs.nerd-font-patcher ];
     installPhase = ''
       runHook preInstall
