@@ -135,10 +135,6 @@ in
       "networkmanager"
       "wheel"
     ];
-    packages =
-      with pkgs;
-      [
-      ];
   };
 
   fonts.packages = with pkgs; [
