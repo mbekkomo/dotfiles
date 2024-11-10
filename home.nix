@@ -253,6 +253,7 @@ in
   programs.eww = {
     enable = true;
     package = pkgs.eww-wayland;
+    configDir = ./configs/eww;
   };
 
   wayland.windowManager.hyprland = {
