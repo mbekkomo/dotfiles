@@ -149,6 +149,7 @@ in
     "io.github.equicord.equibop" # Discord
     "im.fluffychat.Fluffychat" # Matrix
     "dev.toastbits.spmp" # Music
+    "io.itch.itch"
   ];
 
   xdg.portal.enable = true;
