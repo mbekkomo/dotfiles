@@ -48,7 +48,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    systemd.enable = true;
   };
 
   services.printing.enable = true;
