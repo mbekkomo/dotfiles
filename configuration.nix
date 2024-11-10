@@ -103,8 +103,16 @@ in
   services.kmscon.hwRender = true;
   services.kmscon.fonts = [
     {
-      name = "Departure Mono Nerd Font Mono";
-      package = departure-nf;
+      name = "DepartureMono Nerd Font Mono";
+      package = departure-nf-mono;
+    }
+    {
+      name = "Noto fonts";
+      package = pkgs.noto-fonts;
+    }
+    {
+      name = "Noto fonts (Emoji)";
+      package = pkgs.noto-fonts-emoji;
     }
   ];
 
