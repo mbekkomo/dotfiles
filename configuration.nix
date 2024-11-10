@@ -103,7 +103,7 @@ in
   services.kmscon.hwRender = true;
   services.kmscon.fonts = [
     {
-      name = "Departure Mono Nerd Font";
+      name = "Departure Mono Nerd Font Mono";
       package = departure-nf;
     }
   ];
