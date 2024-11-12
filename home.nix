@@ -56,6 +56,7 @@ in
     pamixer
     wl-clipboard
     wmctrl
+    alsa-utils
   ];
 
   home.file = {
