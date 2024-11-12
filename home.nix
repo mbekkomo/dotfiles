@@ -260,6 +260,11 @@ in
     configDir = ./configs/eww;
   };
 
+  programs.wpaperd = {
+    enable = true;
+    
+  }
+
   wayland.windowManager.hyprland = {
     enable = true;
     # TODO: Migrate to Nix expression
