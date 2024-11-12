@@ -73,4 +73,5 @@
                       :anchor "top center")
   :reserve (struts :side "top" :distance "4%")
   :exclusive true
+  :stacking "bg"
   (bar))
