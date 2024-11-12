@@ -55,7 +55,6 @@ in
     kdePackages.polkit-kde-agent-1
     pamixer
     wl-clipboard
-    wmctrl
     alsa-utils
     playerctl
   ];
