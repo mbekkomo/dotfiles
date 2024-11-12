@@ -57,6 +57,7 @@ in
     wl-clipboard
     wmctrl
     alsa-utils
+    playerctl
   ];
 
   home.file = {
