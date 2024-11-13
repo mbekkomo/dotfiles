@@ -101,7 +101,7 @@ in
     Unit.PartOf = [ "graphical-session.target" ];
     Service = {
       ExecStart = "${bun}/bin/bun ${pkgs.arrpc}/lib/node_modules/arrpc/src/index.js";
-      Restart = "Always";
+      Restart = "always";
     };
     Install.WantedBy = [ "hyprland-session.target" ];
   };
