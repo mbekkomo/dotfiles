@@ -8,7 +8,7 @@
   };
 
   outputs =
-    { nixpkgs, nix-flatpak, ... }:
+    { nixpkgs, nix-flatpak, declarative-cachix, ... }:
     let
       system = "x86_64-linux";
       refindCommit = "8f539dc72d1a1d56adb8d434b4ba85bd3e63cf6d";
@@ -18,6 +18,7 @@
         inherit system;
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
+          declarative-cachix.nixosModules.declarative-cachix
           (builtins.fetchTarball { url = "https://gist.github.com/mbekkomo/ba3d86f021aec0f73ceec4047365ef5b/archive/${refindCommit}.tar.gz"; } + "/refind.nix")
           ./configuration.nix
         ];
