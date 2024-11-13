@@ -15,6 +15,7 @@
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
   outputs =
@@ -23,17 +24,20 @@
       home-manager,
       nix-search-cli,
       nixGL,
+      declarative-cachix,
       ...
     }:
     let
-      lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
     in
     {
       homeConfigurations.goat = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [
+          declarative-cachix.homeManagerModules.declarative-cachix
+          ./home.nix
+        ];
         extraSpecialArgs.etcpkgs = {
           nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
           nixGLPackages = nixGL.outputs.packages.${system};
