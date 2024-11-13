@@ -98,7 +98,7 @@ in
     };
   };
 
-  systemd.user.services.arRPC = rec {
+  systemd.user.services.arRPC = {
     Unit.PartOf = [ "graphical-session.target" ];
     Service = {
       ExecStart = "${bun}/bin/bun ${pkgs.arrpc}/lib/node_modules/arrpc/src/index.js";
@@ -148,7 +148,7 @@ in
     enable = true;
     interactiveShellInit = ''
       zoxide init fish | source
-      source ~/.config/fish/lscolors.fish
+      source ${builtins.toString ./etc/lscolors.fish}
 
       set -Ux fifc_editor hx
 
