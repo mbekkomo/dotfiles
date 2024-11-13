@@ -83,7 +83,12 @@ in
       cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
       minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
     };
-    server_names = [ "mullvad-base-doh" "cloudflare" "nextdns" "nextdns-ipv6" ];
+    server_names = [
+      "mullvad-base-doh"
+      "cloudflare"
+      "nextdns"
+      "nextdns-ipv6"
+    ];
   };
   systemd.services.dnscrypt-proxy2.serviceConfig = {
     StateDirectory = "dnscrypt-proxy";
@@ -163,6 +168,37 @@ in
     "dev.toastbits.spmp" # Music
     "io.itch.itch"
   ];
+
+  system.fsPackages = [ pkgs.bindfs ];
+  fileSystems =
+    let
+      mkRoSymBind = path: {
+        device = path;
+        fsType = "fuse.bindfs";
+        options = [
+          "ro"
+          "resolve-symlinks"
+          "x-gvfs-hide"
+        ];
+      };
+      aggregatedIcons = pkgs.buildEnv {
+        name = "system-icons";
+        paths = with pkgs; [
+          #libsForQt5.breeze-qt5  # for plasma
+          gnome.gnome-themes-extra
+        ];
+        pathsToLink = [ "/share/icons" ];
+      };
+      aggregatedFonts = pkgs.buildEnv {
+        name = "system-fonts";
+        paths = config.fonts.packages;
+        pathsToLink = [ "/share/fonts" ];
+      };
+    in
+    {
+      "/usr/share/icons" = mkRoSymBind "${aggregatedIcons}/share/icons";
+      "/usr/local/share/fonts" = mkRoSymBind "${aggregatedFonts}/share/fonts";
+    };
 
   services.udisks2.enable = true;
 
