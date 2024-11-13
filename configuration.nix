@@ -61,6 +61,7 @@ in
     refind
     gptfdisk
     efibootmgr
+    udisks
   ];
 
   networking.networkmanager.enable = true;
