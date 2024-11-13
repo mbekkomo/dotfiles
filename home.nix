@@ -98,9 +98,13 @@ in
     };
   };
 
-  services.arrpc = {
-    enable = true;
-    # systemdTarget = "default.target";
+  systemd.user.services.arRPC = rec {
+    Unit.PartOf = [ "graphical-session.target" ];
+    Service = {
+      ExecStart = "${bun}/bin/bun ${pkgs.arrpc}/lib/node_modules/arrpc/src/index.js";
+      Restart = "Always";
+    };
+    Install.WantedBy = [ "hyprland-session.target" ];
   };
 
   fonts.fontconfig.enable = true;
@@ -261,8 +265,10 @@ in
 
   programs.wpaperd = {
     enable = true;
-    
-  }
+    settings = {
+      
+    };
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
