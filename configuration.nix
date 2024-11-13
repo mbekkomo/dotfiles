@@ -47,6 +47,9 @@ in
   '';
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # comment this if something's fucked up
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
     "nix-command"
