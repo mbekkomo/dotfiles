@@ -164,6 +164,8 @@ in
     "io.itch.itch"
   ];
 
+  services.udisks2.enable = true;
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
     xdg-desktop-portal-gtk
