@@ -39,4 +39,6 @@ _: {
       "bold"
     ];
   };
+
+  push.autoSetupRemote = true;
 }
