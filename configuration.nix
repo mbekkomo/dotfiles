@@ -199,9 +199,4 @@ in
     enable = true;
     enableSSHSupport = true;
   };
-
-  cachix = [
-    "nix-community"
-    "mbekkomo"
-  ];
 }
