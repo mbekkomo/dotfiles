@@ -245,6 +245,11 @@ in
     settings = import ./configs/hypr/idle.nix { };
   };
 
+  programs.hyprlock = {
+    enable = true;
+    settings = import ./configs/hypr/lock.nix { };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     # TODO: Migrate to Nix expression
