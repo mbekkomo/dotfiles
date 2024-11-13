@@ -262,12 +262,12 @@ in
     configDir = ./configs/eww;
   };
 
-  programs.wpaperd = {
-    enable = true;
-    settings = {
+  # programs.wpaperd = {
+  #   enable = true;
+  #   settings = {
       
-    };
-  };
+  #   };
+  # };
 
   wayland.windowManager.hyprland = {
     enable = true;
