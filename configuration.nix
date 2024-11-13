@@ -130,6 +130,16 @@ in
   };
 
   services.printing.enable = true;
+  services.printing.drivers = with pkgs; [
+    gutenprint
+    gutenprintBin
+    epson-201401w # incase my Epson L310 is being a bad bitch
+  ];
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
