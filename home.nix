@@ -67,7 +67,7 @@ in
     wl-clipboard
     alsa-utils
     playerctl
-    hyprpolkitagnet
+    hyprpolkitagent
   ];
 
   home.file = {
