@@ -4,10 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    declarative-cachix.url = "github:jonascarpay/declarative-cachix";
   };
 
   outputs =
-    { self, nixpkgs, nix-flatpak, ... }@inputs:
+    { nixpkgs, nix-flatpak, ... }:
     let
       system = "x86_64-linux";
       refindCommit = "8f539dc72d1a1d56adb8d434b4ba85bd3e63cf6d";
