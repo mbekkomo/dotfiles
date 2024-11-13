@@ -2,7 +2,7 @@ _:
 let
   rgba =
     r: g: b: a:
-    if a == null then "rgba(${r},${g},${b},1.0)" else "rgba(${r},${g}.${b},${a})";
+    if a == null then "rgba(${toString a},${toString g},${toString b},1.0)" else "rgba(${toString r},${toString g},${toString b},${a})";
 in
 {
   general = {
