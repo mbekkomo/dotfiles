@@ -6,4 +6,10 @@ _: {
     after_sleep_cmd = "true";
     ignore_dbus_inhibit = false;
   };
+
+  listener = [
+    {
+      timeout = 
+    }
+  ];
 }
