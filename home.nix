@@ -179,9 +179,9 @@ in
       in
       with pkgs.fishPlugins;
       [
+        (plugin fifc)
         (plugin done)
         (plugin colored-man-pages)
-        (plugin fifc)
         (plugin autopair)
         (plugin git-abbr)
       ];
