@@ -199,4 +199,8 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+
+  cachix = [
+    "mbekkomo"
+  ];
 }
