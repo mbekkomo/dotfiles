@@ -181,6 +181,7 @@ in
     ];
   };
 
+  fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
     departure-nf
     departure-nf-mono
