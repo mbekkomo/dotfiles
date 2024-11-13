@@ -242,7 +242,7 @@ in
 
   services.hypridle = {
     enable = true;
-    
+    settings = import ./configs/hypr/idle.nix { };
   };
 
   wayland.windowManager.hyprland = {
