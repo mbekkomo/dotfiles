@@ -35,7 +35,6 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ./flatpak-missing.nix
   ];
 
   system.stateVersion = "24.05";
