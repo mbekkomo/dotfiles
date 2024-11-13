@@ -170,6 +170,7 @@ in
     "im.nheko.Nheko" # Matrix
     "dev.toastbits.spmp" # Music
     "io.itch.itch"
+    "com.interversehq.qView"
   ];
 
   services.udisks2.enable = true;
