@@ -38,12 +38,21 @@ in
   home.stateVersion = "24.05"; # do not change
 
   home.packages = with pkgs; [
-    etcpkgs.nix-search
+    # Fonts
     departure-nf
+
+    # Nix-purpose
+    etcpkgs.nix-search
+
+    # Devtools
     nixfmt-rfc-style
     shellcheck
+
+    # Misc.
     moar
     glow
+
+    # Something that would ease me off
     fzf
     ripgrep
     fd
@@ -51,12 +60,14 @@ in
     zoxide
     bat
     sigi
+
+    # For hyprland
     dolphin
-    kdePackages.polkit-kde-agent-1
     pamixer
     wl-clipboard
     alsa-utils
     playerctl
+    hyprpolkitagnet
   ];
 
   home.file = {
