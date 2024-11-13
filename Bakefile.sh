@@ -6,7 +6,9 @@ nix() {
 export -f nix
 
 task.switch() {
-  nix run github:nix-community/home-manager -- switch --impure --flake .#goat
+  local locked_hm
+  locked_hm="$(nix eval --impure --raw --expr '(builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.home-manager.locked.rev')"
+  nix run github:nix-community/home-manager/"${locked_hm}" -- switch --impure --flake .#goat
 }
 
 ## TODO: Use Nix formatters to reduce bottlenecks
