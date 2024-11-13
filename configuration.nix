@@ -201,6 +201,7 @@ in
   };
 
   cachix = [
+    "nix-community"
     "mbekkomo"
   ];
 }
