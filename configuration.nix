@@ -119,8 +119,6 @@ in
     }
   ];
 
-  services.xserver.desktopManager.xfce.enable = true;
-
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -150,7 +148,7 @@ in
   services.flatpak.packages = [
     "io.github.zen_browser.zen" # Browser
     "io.github.equicord.equibop" # Discord
-    "im.fluffychat.Fluffychat" # Matrix
+    "im.nheko.Nheko" # Matrix
     "dev.toastbits.spmp" # Music
     "io.itch.itch"
   ];
