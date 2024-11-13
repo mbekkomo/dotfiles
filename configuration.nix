@@ -51,10 +51,13 @@ in
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = [ "komo" ];
+  };
 
   environment.systemPackages = with pkgs; [
     git
