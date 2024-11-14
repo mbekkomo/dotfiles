@@ -138,6 +138,8 @@ in
     xwayland.enable = true;
   };
 
+  security.pam.services.hyprlock = {};
+
   services.printing.enable = true;
   services.printing.drivers = with pkgs; [
     gutenprint
