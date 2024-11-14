@@ -29,7 +29,7 @@
       nix-search-cli,
       nixGL,
       declarative-cachix,
-      nix-index-database
+      nix-index-database,
       ...
     }:
     let
