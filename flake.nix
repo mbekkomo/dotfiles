@@ -16,6 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -25,6 +29,7 @@
       nix-search-cli,
       nixGL,
       declarative-cachix,
+      nix-index-database
       ...
     }:
     let
@@ -36,6 +41,7 @@
         inherit pkgs;
         modules = [
           declarative-cachix.homeManagerModules.declarative-cachix
+          nix-index-database.hmModules.nix-index
           ./home.nix
         ];
         extraSpecialArgs.etcpkgs = {
