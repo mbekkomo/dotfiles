@@ -1,4 +1,4 @@
-_:
+{ root, ... }:
 let
   rgba =
     r: g: b: a:
@@ -14,7 +14,7 @@ in
 
   background = [
     {
-      path = builtins.toString ../../etc/wallpapers/sorcerer-casting.jpg;
+      path = builtins.toString (root + /etc/wallpapers/sorcerer-casting.jpg);
       blur_passes = 2;
     }
   ];
