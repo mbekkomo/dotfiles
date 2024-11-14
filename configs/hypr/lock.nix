@@ -26,9 +26,9 @@ in
       monitor = "";
       dots_center = true;
       fade_on_empty = false;
-      font_color = rgba 202 211 245 null;
-      inner_color = rgba 91 96 120 null;
-      outer_color = rgba 24 25 38 null;
+      font_color = rgba 205 214 244 null;
+      inner_color = rgba 127 132 156 null;
+      outer_color = rgba 24 24 37 null;
       outline_thickness = 5;
       placeholder_text = ''<span foreground="##cad3f5">Password...</span>'';
       shadow_passes = 2;
