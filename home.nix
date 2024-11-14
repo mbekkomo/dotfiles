@@ -187,6 +187,8 @@ in
       ];
   };
 
+  programs.nix-index.enable = true;
+
   programs.eza = {
     enable = true;
     icons = "auto";
