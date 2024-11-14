@@ -247,7 +247,7 @@ in
 
   programs.hyprlock = {
     enable = true;
-    settings = import ./configs/hypr/lock.nix { };
+    settings = import ./configs/hypr/lock.nix { root = ./.; };
   };
 
   wayland.windowManager.hyprland = {
