@@ -214,6 +214,7 @@ in
       gh-s
       gh-f
       gh-notify
+      gh-markdown-preview
     ];
     settings.aliases = {
       rcl = "repo clone";
