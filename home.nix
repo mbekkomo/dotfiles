@@ -31,7 +31,7 @@ let
     '';
   };
 
-  loadConfig = x: y: import x ({ root = ./.; } // inputs // y);
+  loadConfig = x: y: import x (inputs // { root = ./.; } // y);
 in
 {
   programs.home-manager.enable = true;
@@ -252,18 +252,18 @@ in
 
   services.hypridle = {
     enable = true;
-    settings = import ./configs/hypr/idle.nix { };
+    settings = loadConfig ./configs/hypr/idle.nix { };
   };
 
   programs.hyprlock = {
     enable = true;
-    settings = import ./configs/hypr/lock.nix { root = ./.; };
+    settings = loadConfig ./configs/hypr/lock.nix { };
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
     # TODO: Migrate to Nix expression
-    settings = import ./configs/hyprland.nix { };
+    settings = loadConfig ./configs/hyprland.nix { };
     importantPrefixes = [
       "source"
       "$"
