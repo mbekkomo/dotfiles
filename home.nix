@@ -42,6 +42,8 @@ in
   home.packages = with pkgs; [
     # Fonts
     departure-nf
+    noto-fonts
+    noto-fonts-color-emoji
 
     # Nix-purpose
     etcpkgs.nix-search
@@ -121,6 +123,7 @@ in
   };
 
   fonts.fontconfig.enable = true;
+  fonts.fontconfig.defaultFonts.emoji = [ "Noto Color Emoji" ];
 
   programs.helix = {
     enable = true;
