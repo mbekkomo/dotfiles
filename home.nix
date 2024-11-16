@@ -145,7 +145,7 @@ in
   programs.rio = {
     enable = true;
     package = wrapGL pkgs.rio;
-    settings = loadConfig 
+    settings = loadConfig ./configs/rio.nix { };
   };
 
   programs.zellij = {
