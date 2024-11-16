@@ -63,5 +63,7 @@
             ;
         };
       };
+
+      formatter = pkgs.nixfmt-rfc-style;
     };
 }
