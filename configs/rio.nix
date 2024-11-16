@@ -2,7 +2,7 @@
 {
   theme = "catppuccin";
 
-  fonts.size = 10;
+  fonts.size = 18;
   fonts.family = "DepartureMono Nerd Font";
   fonts.emoji.family = "Noto Color Emoji";
 
