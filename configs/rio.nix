@@ -15,6 +15,7 @@
   hide-mouse-cursor-when-typing = true;
 
   editor.program = "${pkgs.helix}/bin/hx";
+  editor.args = [];
 
   cursor.blinking = true;
 
