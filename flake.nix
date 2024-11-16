@@ -38,7 +38,7 @@
       ...
     }:
     let
-      system = let x = (builtins.getEnv "SYSTEM"); in if x == null then "x86_64-linux" else x;
+      system = let x = (builtins.getEnv "NIXPKGS_SYSTEM"); in if x == null then "x86_64-linux" else x;
       pkgs = import nixpkgs { inherit system; };
     in
     {
