@@ -22,4 +22,5 @@
   window.blur = true;
 
   padding.x = 5;
+  padding.y = [3 0];
 }
