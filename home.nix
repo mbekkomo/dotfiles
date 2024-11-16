@@ -74,6 +74,9 @@ in
     alsa-utils
     playerctl
     hyprpolkitagent
+
+    # stupid bloat shits why the fuck do i even install these
+    dorion
   ];
 
   home.file = {
