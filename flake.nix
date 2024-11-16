@@ -20,6 +20,10 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin-rio = {
+      url = "github:catppuccin/rio";
+      flake = false;
+    };
   };
 
   outputs =
@@ -30,6 +34,7 @@
       nixGL,
       declarative-cachix,
       nix-index-database,
+      catppuccin-rio,
       ...
     }:
     let
@@ -47,6 +52,9 @@
         extraSpecialArgs.etcpkgs = {
           nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
           nixGLPackages = nixGL.outputs.packages.${system};
+        };
+        extraSpecialArgs.vendor = {
+          inherit catppuccin-rio;
         };
       };
     };
