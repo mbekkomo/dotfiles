@@ -1,18 +1,18 @@
 {
   "nodes": {
-    "catppuccin-rio": {
+    "catppuccin-alacritty": {
       "flake": false,
       "locked": {
-        "lastModified": 1720759403,
-        "narHash": "sha256-8cbySVryZQTUtogpiuMca+ANhtQjLS8AyvfngIVZN5w=",
+        "lastModified": 1730074245,
+        "narHash": "sha256-H8bouVCS46h0DgQ+oYY8JitahQDj0V9p2cOoD4cQX+Q=",
         "owner": "catppuccin",
-        "repo": "rio",
-        "rev": "6d93b3385a0f2ae586edc30aa64601d40ea382d5",
+        "repo": "alacritty",
+        "rev": "f6cb5a5c2b404cdaceaff193b9c52317f62c62f7",
         "type": "github"
       },
       "original": {
         "owner": "catppuccin",
-        "repo": "rio",
+        "repo": "alacritty",
         "type": "github"
       }
     },
@@ -194,7 +194,7 @@
     },
     "root": {
       "inputs": {
-        "catppuccin-rio": "catppuccin-rio",
+        "catppuccin-alacritty": "catppuccin-alacritty",
         "declarative-cachix": "declarative-cachix",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
