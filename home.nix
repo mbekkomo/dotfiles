@@ -76,7 +76,7 @@ in
     hyprpolkitagent
 
     # stupid bloat shits why the fuck do i even install these
-    dorion
+    (wrapGL dorion)
   ];
 
   home.file = {
