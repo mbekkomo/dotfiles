@@ -81,7 +81,6 @@ in
     ".config/zls.json".text = builtins.toJSON (import ./configs/zls.nix { });
     ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
     ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
-    ".config/rio/themes/catppuccin.toml".source = vendor.catppuccin-rio + /themes/catppuccin-mocha.toml;
   };
 
   home.sessionVariables = {
@@ -144,13 +143,7 @@ in
   programs.alacritty = {
     enable = true;
     package = wrapGL pkgs.alacritty;
-    settings = loadConfig ./configs/alacritty.nix { themeDir = "${homeDir}/.config/alacritty/themes"; };
-  };
-
-  programs.rio = {
-    enable = true;
-    package = wrapGL pkgs.rio;
-    settings = loadConfig ./configs/rio.nix { };
+    settings = loadConfig ./configs/alacritty.nix { };
   };
 
   programs.zellij = {
