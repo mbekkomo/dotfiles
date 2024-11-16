@@ -10,7 +10,10 @@
     y = 1;
   };
 
-  window.dynamic_padding = true;
+  padding = {
+    x = 3;
+    y = 2;
+  };
 
   terminal = {
     shell.program = "/usr/bin/env";
