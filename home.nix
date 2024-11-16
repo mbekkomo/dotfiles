@@ -3,6 +3,7 @@
   lib,
   pkgs,
   etcpkgs,
+  vendor,
   ...
 }@inputs:
 let
@@ -80,6 +81,7 @@ in
     ".config/zls.json".text = builtins.toJSON (import ./configs/zls.nix { });
     ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
     ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
+    ".config/rio/themes/catppuccin.toml".source = vendor.catppuccin-rio.outPath + /themes/catppuccin-mocha.toml;
   };
 
   home.sessionVariables = {

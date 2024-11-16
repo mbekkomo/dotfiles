@@ -7,5 +7,5 @@
   renderer.performance = "High";
   renderer.backend = "Vulkan";
 
-  shell.program = "${pkgs.fish}/bin";
+  shell.program = "${pkgs.fish}/bin/fish";
 }
