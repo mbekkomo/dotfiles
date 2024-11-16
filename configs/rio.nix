@@ -10,7 +10,7 @@
   renderer.backend = "Vulkan";
 
   shell.program = "${pkgs.fish}/bin/fish";
-  shell.args = ["--login"];
+  shell.args = [ "--login" ];
 
   hide-mouse-cursor-when-typing = true;
 
@@ -22,5 +22,8 @@
   window.blur = true;
 
   padding.x = 5;
-  padding.y = [3 0];
+  padding.y = [
+    3
+    0
+  ];
 }
