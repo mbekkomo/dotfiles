@@ -4,7 +4,7 @@
   pkgs,
   etcpkgs,
   ...
-}:
+}@inputs:
 let
   username = "komo"; # change to your username
   homeDir = "/home/${username}";
@@ -30,6 +30,8 @@ let
       runHook postInstall
     '';
   };
+
+  loadConfig = x: y: import x ({ root = ./.; } // inputs // y);
 in
 {
   programs.home-manager.enable = true;
@@ -130,19 +132,25 @@ in
       emmet-language-server
       zls
     ];
-    settings = import ./configs/helix.nix { };
-    languages = import ./configs/hx-langs.nix { };
+    settings = loadConfig ./configs/helix.nix { };
+    languages = loadConfig ./configs/hx-langs.nix { };
   };
 
   programs.alacritty = {
     enable = true;
     package = wrapGL pkgs.alacritty;
-    settings = import ./configs/alacritty.nix { themeDir = "${homeDir}/.config/alacritty/themes"; };
+    settings = loadConfig ./configs/alacritty.nix { themeDir = "${homeDir}/.config/alacritty/themes"; };
+  };
+
+  programs.rio = {
+    enable = true;
+    package = wrapGL pkgs.rio;
+    settings = loadConfig 
   };
 
   programs.zellij = {
     enable = true;
-    settings = import ./configs/zellij.nix { };
+    settings = loadConfig ./configs/zellij.nix { };
   };
 
   programs.bun = {
@@ -152,7 +160,7 @@ in
 
   programs.starship = {
     enable = true;
-    settings = import ./configs/starship.nix { };
+    settings = loadConfig ./configs/starship.nix { };
   };
 
   programs.fish = {
@@ -201,8 +209,8 @@ in
     enable = true;
     diff-so-fancy.enable = true;
     userName = "Komo";
-    userEmail = "71205197+mbekkomo@users.noreply.github.com";
-    extraConfig = import ./configs/git.nix { };
+    userEmail = "afiqquraisyzulkarnain@gmail.com";
+    extraConfig = loadConfig ./configs/git.nix { };
   };
 
   programs.gh = {
