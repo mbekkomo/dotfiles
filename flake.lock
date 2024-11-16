@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "catppuccin-rio": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720759403,
+        "narHash": "sha256-8cbySVryZQTUtogpiuMca+ANhtQjLS8AyvfngIVZN5w=",
+        "owner": "catppuccin",
+        "repo": "rio",
+        "rev": "6d93b3385a0f2ae586edc30aa64601d40ea382d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "rio",
+        "type": "github"
+      }
+    },
     "declarative-cachix": {
       "locked": {
         "lastModified": 1698062126,
@@ -178,6 +194,7 @@
     },
     "root": {
       "inputs": {
+        "catppuccin-rio": "catppuccin-rio",
         "declarative-cachix": "declarative-cachix",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
