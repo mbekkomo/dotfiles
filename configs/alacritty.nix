@@ -10,7 +10,7 @@
     y = 1;
   };
 
-  padding = {
+  windows.padding = {
     x = 3;
     y = 2;
   };
