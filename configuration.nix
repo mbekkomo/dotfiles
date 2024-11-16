@@ -48,7 +48,7 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   # comment this if something's fucked up
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_lqx;
 
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
