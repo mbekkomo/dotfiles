@@ -11,8 +11,3 @@ task.switch() {
   [[ -n "$1" ]] && export NIXPKGS_SYSTEM="$1"
   nix run github:nix-community/home-manager/"${locked_hm}" -- switch --impure --flake .#goat
 }
-
-## TODO: Use Nix formatters to reduce bottlenecks
-task.fmt() {
-  nix run nixpkgs#fd -- -e nix -X nix run nixpkgs#nixfmt-rfc-style {}
-}
