@@ -1,9 +1,5 @@
-{ themeDir, ... }:
-let
-  theme = "tokyonight";
-in
-{
-  general.import = [ "${themeDir}/${theme}.toml" ];
+{ vendor, ... }: {
+  general.import = [ (toString (vendor.catppuccin-alacritty + /catppuccin-mocha.toml)) ];
 
   font.normal = {
     family = "DepartureMono Nerd Font";
