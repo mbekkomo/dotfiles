@@ -20,8 +20,8 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin-rio = {
-      url = "github:catppuccin/rio";
+    catppuccin-alacritty = {
+      url = "github:catppuccin/alacritty";
       flake = false;
     };
   };
@@ -34,11 +34,15 @@
       nixGL,
       declarative-cachix,
       nix-index-database,
-      catppuccin-rio,
+      catppuccin-alacritty,
       ...
     }:
     let
-      system = let x = (builtins.getEnv "NIXPKGS_SYSTEM"); in if x == "" then "x86_64-linux" else x;
+      system =
+        let
+          x = (builtins.getEnv "NIXPKGS_SYSTEM");
+        in
+        if x == "" then "x86_64-linux" else x;
       pkgs = import nixpkgs { inherit system; };
     in
     {
@@ -54,7 +58,9 @@
           nixGLPackages = nixGL.outputs.packages.${system};
         };
         extraSpecialArgs.vendor = {
-          inherit catppuccin-rio;
+          inherit
+            catppuccin-alacritty
+            ;
         };
       };
     };
