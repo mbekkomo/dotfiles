@@ -15,6 +15,9 @@
     y = 2;
   };
 
+  window.opacity = 0.5;
+  window.blur = true;
+
   terminal = {
     shell.program = "/usr/bin/env";
     shell.args = [ "fish" ];
