@@ -1,5 +1,5 @@
 _: {
-  theme = "catppuccin-mocha";
+  theme = "catppuccin_mocha";
 
   editor = {
     true-color = true;
