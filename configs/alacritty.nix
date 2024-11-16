@@ -1,4 +1,5 @@
-{ vendor, ... }: {
+{ vendor, ... }:
+{
   general.import = [ (toString (vendor.catppuccin-alacritty + /catppuccin-mocha.toml)) ];
 
   font.normal = {

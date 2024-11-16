@@ -83,7 +83,8 @@ in
   env_var.NIX_SHELL =
     let
       symbol = "󱄅";
-    in {
+    in
+    {
       inherit symbol;
       style = "bold fg:110";
       format = "[$symbol]($style) ";

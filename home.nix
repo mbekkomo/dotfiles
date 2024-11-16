@@ -244,7 +244,7 @@ in
   # programs.wpaperd = {
   #   enable = true;
   #   settings = {
-      
+
   #   };
   # };
 
