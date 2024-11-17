@@ -20,10 +20,7 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin-alacritty = {
-      url = "github:catppuccin/alacritty";
-      flake = false;
-    };
+    catppuccin.url = "github:catppuccin/nix"
   };
 
   outputs =
@@ -34,7 +31,7 @@
       nixGL,
       declarative-cachix,
       nix-index-database,
-      catppuccin-alacritty,
+      catppuccin,
       ...
     }:
     let
@@ -56,11 +53,6 @@
         extraSpecialArgs.etcpkgs = {
           nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
           nixGLPackages = nixGL.outputs.packages.${system};
-        };
-        extraSpecialArgs.vendor = {
-          inherit
-            catppuccin-alacritty
-            ;
         };
       };
 
