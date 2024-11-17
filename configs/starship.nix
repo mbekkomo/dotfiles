@@ -106,5 +106,5 @@ in
       }
       [ └─╴](grey)$character'';
 
-  palettes.catppuccin_mocha = config.catppuccin_mocha // palette;
+  palettes.catppuccin_mocha = config.palettes.catppuccin_mocha // palette;
 }
