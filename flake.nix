@@ -48,8 +48,8 @@
         modules = [
           declarative-cachix.homeManagerModules.declarative-cachix
           nix-index-database.hmModules.nix-index
-          catppuccin.homeManagerModules.catppuccin
           ./home.nix
+          catppuccin.homeManagerModules.catppuccin
         ];
         extraSpecialArgs.etcpkgs = {
           nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
