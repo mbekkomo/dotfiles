@@ -121,12 +121,14 @@ in
 
   programs.password-store = {
     enable = true;
-    package = pkgs.pass.withExtensions (exts: with exts; [
-      pass-otp
-      pass-genphrase
-      pass-update
-      pass-audit
-    ]);
+    package = pkgs.pass.withExtensions (
+      exts: with exts; [
+        pass-otp
+        pass-genphrase
+        pass-update
+        pass-audit
+      ]
+    );
   };
 
   services.git-sync = {
