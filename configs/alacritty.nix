@@ -1,4 +1,4 @@
-{ vendor, ... }:
+{ ... }:
 {
   font.normal = {
     family = "DepartureMono Nerd Font";
