@@ -119,6 +119,10 @@ in
     installScripts = [ "mesa" ];
   };
 
+  programs.password-store = {
+    enable = true;
+  };
+
   services.git-sync = {
     enable = true;
     repositories."nix" = {
