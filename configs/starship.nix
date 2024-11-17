@@ -1,4 +1,4 @@
-_:
+{ lib, config, ... }:
 let
   palette = {
     grey = "#a6a6a6";
@@ -105,6 +105,5 @@ in
       }
       [ └─╴](grey)$character'';
 
-  palette = "goat";
-  palettes.goat = palette;
+  palettes.catppuccin
 }
