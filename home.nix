@@ -49,6 +49,7 @@ in
     cachix
 
     # Devtools
+    devenv
     nixfmt-rfc-style
     shellcheck
 
