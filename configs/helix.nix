@@ -1,6 +1,4 @@
 _: {
-  theme = "catppuccin_mocha";
-
   editor = {
     true-color = true;
     mouse = false;
