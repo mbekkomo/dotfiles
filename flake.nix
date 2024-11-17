@@ -20,7 +20,7 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin.url = "github:catppuccin/nix"
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
@@ -48,6 +48,7 @@
         modules = [
           declarative-cachix.homeManagerModules.declarative-cachix
           nix-index-database.hmModules.nix-index
+          catppuccin.homeManagerModules.catppuccin
           ./home.nix
         ];
         extraSpecialArgs.etcpkgs = {

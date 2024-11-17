@@ -89,6 +89,9 @@ in
     "PAGER" = "${pkgs.moar}/bin/moar";
   };
 
+  catppuccin.flavor = "mocha";
+  catppuccin.enable = true;
+
   nix = {
     package = pkgs.nix;
     settings = {
@@ -154,6 +157,7 @@ in
     enable = true;
     package = wrapGL pkgs.alacritty;
     settings = loadConfig ./configs/alacritty.nix { };
+    catppuccin.enable = true;
   };
 
   programs.zellij = {
