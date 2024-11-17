@@ -1,18 +1,17 @@
 {
   "nodes": {
-    "catppuccin-alacritty": {
-      "flake": false,
+    "catppuccin": {
       "locked": {
-        "lastModified": 1730074245,
-        "narHash": "sha256-H8bouVCS46h0DgQ+oYY8JitahQDj0V9p2cOoD4cQX+Q=",
+        "lastModified": 1731232837,
+        "narHash": "sha256-0aIwr/RC/oe7rYkfJb47xjdEQDSNcqpFGsEa+EPlDEs=",
         "owner": "catppuccin",
-        "repo": "alacritty",
-        "rev": "f6cb5a5c2b404cdaceaff193b9c52317f62c62f7",
+        "repo": "nix",
+        "rev": "32359bf226fe874d3b7a0a5753d291a4da9616fe",
         "type": "github"
       },
       "original": {
         "owner": "catppuccin",
-        "repo": "alacritty",
+        "repo": "nix",
         "type": "github"
       }
     },
@@ -195,7 +194,7 @@
     },
     "root": {
       "inputs": {
-        "catppuccin-alacritty": "catppuccin-alacritty",
+        "catppuccin": "catppuccin",
         "declarative-cachix": "declarative-cachix",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
