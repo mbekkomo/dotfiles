@@ -1,7 +1,5 @@
 { vendor, ... }:
 {
-  general.import = [ (toString (vendor.catppuccin-alacritty + /catppuccin-mocha.toml)) ];
-
   font.normal = {
     family = "DepartureMono Nerd Font";
     style = "Regular";
