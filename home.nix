@@ -255,6 +255,15 @@ in
     configDir = ./configs/eww;
   };
 
+  programs.waybar = {
+    enable = true;
+    settings = loadConfig ./configs/waybar.nix { };
+    systemd = {
+      enable = true;
+      target = "hyprland-session.target";
+    };
+  };
+
   # programs.wpaperd = {
   #   enable = true;
   #   settings = {
