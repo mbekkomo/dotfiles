@@ -1,6 +1,6 @@
-{ lib, config, ... }:
+{ lib, ... }@inputs:
 let
-  config = config.programs.starship.settings;
+  config = inputs.config.programs.starship.settings;
   palette = {
     grey = "#a6a6a6";
   };
