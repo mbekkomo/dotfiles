@@ -1,9 +1,7 @@
 {
   config,
-  lib,
   pkgs,
   etcpkgs,
-  vendor,
   ...
 }@inputs:
 let
@@ -76,7 +74,7 @@ in
     hyprpolkitagent
 
     # stupid bloat shits why the fuck do i even install these
-    (wrapGL dorion)
+    dissent
   ];
 
   home.file = {
