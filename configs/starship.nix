@@ -1,10 +1,4 @@
-{ lib, ... }@inputs:
-let
-  config = inputs.config.programs.starship.settings;
-  palette = {
-    grey = "#a6a6a6";
-  };
-in
+{ ... }:
 {
   username =
     let
@@ -98,13 +92,11 @@ in
       dot = "[🞄](grey)";
     in
     ''
-      $battery''${env_var.NIX_SHELL}$username [@](grey) $directory$fill${
+      $battery''${env_var.NIX_SHELL}$username [@](fg:#a6a6a6) $directory$fill${
         # prevent nixfmt from formatting this line
         "$git_branch$git_commit$git_state$git_metrics$git_status"
         #
         # + "$cmd_duration"
       }
       [ └─╴](grey)$character'';
-
-  palettes.catppuccin_mocha.grey = palette.grey;
 }
