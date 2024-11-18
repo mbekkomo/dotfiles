@@ -1,4 +1,4 @@
-_:
+{ pkgs, ... }:
 let
   terminal = "alacritty";
 in
@@ -8,5 +8,6 @@ in
     "systemctl --user start hyprpolkitagent.service"
     "systemctl --user start hypridle.service"
     "eww open bar"
+    "${pkgs.wluma}/bin/wluma"
   ];
 }
