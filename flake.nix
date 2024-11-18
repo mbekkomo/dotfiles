@@ -21,6 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
+    nix-std.url = "github:chessai/nix-std";
   };
 
   outputs =
@@ -32,6 +33,7 @@
       declarative-cachix,
       nix-index-database,
       catppuccin,
+      nix-std,
       ...
     }:
     let
@@ -55,6 +57,7 @@
           nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
           nixGLPackages = nixGL.outputs.packages.${system};
         };
+        extraSpecialArgs.std = nix-std.lib;
       };
 
       formatter.${system} = pkgs.nixfmt-rfc-style;
