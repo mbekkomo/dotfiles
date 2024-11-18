@@ -12,7 +12,7 @@ in
   ];
 
   bindel = [
-    ",XF86KbdBrightnessUp, exec, brightnessctl s 10%+"
-    ",XF86KbdBrightnessDown, exec, brightnessctl s 10%-"
+    ",XF86KbdBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%+"
+    ",XF86KbdBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%-"
   ];
 }
