@@ -8,7 +8,7 @@ in
     "systemctl --user start hyprpolkitagent.service"
     "systemctl --user start hypridle.service"
     "eww open bar"
-    "${pkgs.wluma}/bin/wluma"
+    "${pkgs.wluma}/bin/wluma &"
   ];
 
   bindel = [
