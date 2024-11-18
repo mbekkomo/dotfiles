@@ -84,7 +84,7 @@ in
     ".config/zls.json".text = builtins.toJSON (loadConfig ./configs/zls.nix { });
     ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
     ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
-    ".config/wluma/config.toml".text = std.serde.toToml (loadConfig ./configs/wluma.nix { });
+    ".config/wluma/config.toml".text = std.serde.toTOML (loadConfig ./configs/wluma.nix { });
   };
 
   home.sessionVariables = {
