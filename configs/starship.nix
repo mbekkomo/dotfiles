@@ -82,8 +82,13 @@
     {
       inherit symbol;
       style = "bold fg:110";
-      format = "[$symbol]($style) ";
+      format = "[$symbol ]($style)";
     };
+
+  env_var.DEVENV_ROOT = {
+    style = "fg:63";
+    format = ''[\(devenv\) ]($style)'';
+  };
 
   fill.symbol = " ";
 
@@ -92,7 +97,7 @@
       dot = "[🞄](grey)";
     in
     ''
-      $battery''${env_var.NIX_SHELL}$username [@](fg:#a6a6a6) $directory$fill${
+      $battery''${env_var.DEVENV_ROOT}''${env_var.NIX_SHELL}$username [@](fg:#a6a6a6) $directory$fill${
         # prevent nixfmt from formatting this line
         "$git_branch$git_commit$git_state$git_metrics$git_status"
         #
