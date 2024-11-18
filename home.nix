@@ -2,6 +2,7 @@
   config,
   pkgs,
   etcpkgs,
+  std,
   ...
 }@inputs:
 let
@@ -80,9 +81,10 @@ in
 
   home.file = {
     ".config/alacritty/themes/tokyonight.toml".source = ./configs/alacritty/tokyonight.toml;
-    ".config/zls.json".text = builtins.toJSON (import ./configs/zls.nix { });
+    ".config/zls.json".text = builtins.toJSON (loadConfig ./configs/zls.nix { });
     ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
     ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
+    ".config/wluma/config.toml".text = std.serde.toToml (loadConfig ./configs/wluma.nix { });
   };
 
   home.sessionVariables = {
