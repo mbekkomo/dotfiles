@@ -10,4 +10,8 @@ in
     "eww open bar"
     "${pkgs.wluma}/bin/wluma"
   ];
+
+  bindel = [
+    ""
+  ];
 }
