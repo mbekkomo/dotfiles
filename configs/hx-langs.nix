@@ -20,10 +20,11 @@ _: {
       roots = [ ".git" ];
       language-servers = [ "emmet-langserver" ];
     }
-    {
+    rec {
       inherit indent;
       
       name = "civet";
+      scope = "source.${name}";
       file-types = [ "civet" ];
       comment-tokens = "//";
       block-comment-tokens = [
