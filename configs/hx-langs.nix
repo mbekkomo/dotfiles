@@ -32,5 +32,14 @@ _: {
         { start = "###\n"; end = "\n###"; }
       ];
     }
+    rec {
+      inherit indent;
+      
+      name = "nelua";
+      scope = "source.${name}";
+      file-types = [ "nelua" ];
+      comment-tokens = "--";
+      block-comment-tokens = { start = "--[["; end = "]]"; };
+    }
   ];
 }
