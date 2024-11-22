@@ -20,11 +20,11 @@ _: {
       roots = [ ".git" ];
       language-servers = [ "emmet-langserver" ];
     }
-    rec {
+    {
       inherit indent;
       
       name = "civet";
-      scope = "source.${name}";
+      scope = "source.civet";
       file-types = [ "civet" ];
       comment-tokens = "//";
       block-comment-tokens = [
@@ -32,12 +32,11 @@ _: {
         { start = "###\n"; end = "\n###"; }
       ];
     }
-    rec {
-      inherit (indent) unit;
-      indent.tab-width = 3; 
+    {
+      inherit indent;
       
       name = "nelua";
-      scope = "source.${name}";
+      scope = "source.nelua";
       file-types = [ "nelua" ];
       comment-tokens = "--";
       block-comment-tokens = { start = "--[["; end = "]]"; };
