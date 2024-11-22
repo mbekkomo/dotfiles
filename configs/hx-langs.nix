@@ -13,8 +13,7 @@ _: {
   language =
     let
       indent = {
-        tab-width = 2;
-        unit = " ";
+        unit = "  ";
       };
     in
     [
@@ -42,10 +41,7 @@ _: {
         ];
       }
       {
-        indent = {
-          inherit (indent) unit;
-        };
-        indent.tab-width = 3;
+        inherit indent;
 
         name = "nelua";
         scope = "source.nelua";
