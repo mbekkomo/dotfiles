@@ -33,7 +33,7 @@ _: {
       ];
     }
     {
-      inherit (indent) unit;
+      indent = { inherit (indent) unit; };
       indent.tab-width = 3;
       
       name = "nelua";
