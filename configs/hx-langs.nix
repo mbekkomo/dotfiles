@@ -33,7 +33,8 @@ _: {
       ];
     }
     {
-      inherit indent;
+      inherit (indent) unit;
+      indent.tab-width = 3;
       
       name = "nelua";
       scope = "source.nelua";
