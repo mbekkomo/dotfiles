@@ -1,5 +1,6 @@
-{ ... }: {
-  als.none = {};
+{ ... }:
+{
+  als.none = { };
   output.backlight = [
     {
       name = "eDP-1";
