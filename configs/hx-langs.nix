@@ -14,6 +14,7 @@ _: {
     let
       indent = {
         unit = "  ";
+        tab-width = 2;
       };
     in
     [
