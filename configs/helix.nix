@@ -54,4 +54,12 @@ _: {
     max-wrap = 25;
     max-indent-retain = 0;
   };
+
+  keys.normal = {
+    "C-m" = {
+      s = "save_selection";
+      "." = "jump_forward";
+      "," = "jump_backward";
+    };
+  };
 }
