@@ -140,6 +140,10 @@ in
       path = "${homeDir}/nix";
       uri = "https://github.com/mbekkomo/nix.git";
     };
+    repositories."password-store" = {
+      path = "${homeDir}/.local/share/password-store";
+      uri = "https://github.com/mbekkomo/.password-store";
+    };
   };
 
   systemd.user.services.arRPC = {
