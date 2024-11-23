@@ -10,6 +10,8 @@ _: {
     args = [ "--stdio" ];
   };
 
+  language-server.ccls.command = "ccls";
+
   language =
     let
       indent = {
@@ -52,6 +54,14 @@ _: {
           start = "--[[";
           end = "]]";
         };
+      }
+      {
+        name = "c";
+        language-servers = [ "ccls" ];
+      }
+      {
+        name = "cpp";
+        language-servers = [ "ccls" ];
       }
     ];
 }
