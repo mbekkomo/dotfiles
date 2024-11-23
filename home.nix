@@ -55,6 +55,7 @@ in
     shellcheck
 
     # Misc.
+    micro
     moar
     glow
 
