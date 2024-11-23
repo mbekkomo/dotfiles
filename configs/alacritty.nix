@@ -21,4 +21,6 @@
     shell.program = "/usr/bin/env";
     shell.args = [ "fish" ];
   };
+
+  mouse.hide_when_typing = true;
 }
