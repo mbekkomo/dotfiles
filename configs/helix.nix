@@ -12,11 +12,6 @@ _: {
     preview-completion-insert = false;
   };
 
-  editor.lsp = {
-    display-messages = true;
-    display-inlay-hints = true;
-  };
-
   editor.statusline = {
     mode = {
       normal = "[N]";
