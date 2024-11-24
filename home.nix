@@ -274,11 +274,6 @@ in
 
   services.dunst.enable = true;
 
-  programs.eww = {
-    enable = true;
-    configDir = ./configs/eww;
-  };
-
   programs.waybar = {
     enable = true;
     settings = loadConfig "waybar" { };
