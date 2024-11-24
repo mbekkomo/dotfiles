@@ -169,20 +169,20 @@ in
       emmet-language-server
       zls
     ];
-    settings = loadConfig "helix" { };
+    settings = loadConfig "helix/config" { };
     languages = loadConfig "helix/languages" { };
   };
 
   programs.alacritty = {
     enable = true;
     package = wrapGL pkgs.alacritty;
-    settings = loadConfig "alacritty" { };
+    settings = loadConfig ./configs/alacritty.nix { };
     catppuccin.enable = true;
   };
 
   programs.zellij = {
     enable = true;
-    settings = loadConfig "zellij" { };
+    settings = loadConfig ./configs/zellij.nix { };
   };
 
   programs.bun = {
@@ -192,7 +192,7 @@ in
 
   programs.starship = {
     enable = true;
-    settings = loadConfig "starship" { };
+    settings = loadConfig ./configs/starship.nix { };
   };
 
   programs.fish = {
@@ -242,7 +242,7 @@ in
     diff-so-fancy.enable = true;
     userName = "Komo";
     userEmail = "afiqquraisyzulkarnain@gmail.com";
-    extraConfig = loadConfig "git" { };
+    extraConfig = loadConfig ./configs/git.nix { };
   };
 
   programs.gh = {
@@ -277,7 +277,7 @@ in
 
   programs.waybar = {
     enable = true;
-    settings = loadConfig "waybar" { };
+    settings = loadConfig ./configs/waybar.nix { };
     systemd = {
       enable = true;
       target = "hyprland-session.target";
@@ -293,18 +293,18 @@ in
 
   services.hypridle = {
     enable = true;
-    settings = loadConfig "hypr/idle" { };
+    settings = loadConfig ./configs/hypr/idle.nix { };
   };
 
   programs.hyprlock = {
     enable = true;
-    settings = loadConfig "hypr/lock" { };
+    settings = loadConfig ./configs/hypr/lock.nix { };
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
     # TODO: Migrate to Nix expression
-    settings = loadConfig "hypr/wm" { };
+    settings = loadConfig ./configs/hyprland.nix { };
     importantPrefixes = [
       "source"
       "$"
