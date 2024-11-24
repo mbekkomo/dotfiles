@@ -7,6 +7,7 @@ let
 in
 {
   exec-once = [
+    terminal
     "systemctl --user start dunst.service"
     "systemctl --user start hyprpolkitagent.service"
     "systemctl --user start hypridle.service"
