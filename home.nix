@@ -283,12 +283,10 @@ in
     };
   };
 
-  # programs.wpaperd = {
-  #   enable = true;
-  #   settings = {
-
-  #   };
-  # };
+  programs.wpaperd = {
+    enable = true;
+    settings = loadConfig "wpaperd" { };
+  };
 
   services.hypridle = {
     enable = true;
