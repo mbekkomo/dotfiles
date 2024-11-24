@@ -547,5 +547,8 @@ in
     "mbekkomo"
   ];
 
-  gtk.enable = true;
+  gtk = {
+    enable = true;
+    catppuccin.enable = true;
+  };
 }
