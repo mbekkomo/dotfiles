@@ -31,7 +31,7 @@ let
     '';
   };
 
-  loadConfig = x: y: import x (inputs // { root = ./.; } // y);
+  loadConfig = x: y: import (./configs + "/${x}.nix") (inputs // { root = ./.; } // y);
 in
 {
   programs.home-manager.enable = true;
