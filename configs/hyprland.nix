@@ -10,7 +10,7 @@ in
     "systemctl --user start dunst.service"
     "systemctl --user start hyprpolkitagent.service"
     "systemctl --user start hypridle.service"
-    "(${pkgs.wluma}/bin/wluma &)"
+    "${pkgs.wluma}/bin/wluma &"
   ];
 
   monitor = ",preferred,auto,auto";
