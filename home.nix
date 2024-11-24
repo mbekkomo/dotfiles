@@ -80,13 +80,17 @@ in
     dissent
   ];
 
-  home.file = {
-    ".config/alacritty/themes/tokyonight.toml".source = ./configs/alacritty/tokyonight.toml;
-    ".config/zls.json".text = builtins.toJSON (loadConfig "zls" { });
-    ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
-    ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
-    ".config/wluma/config.toml".text = std.serde.toTOML (loadConfig "wluma" { });
-  };
+  home.file =
+    # External Config
+    {
+      ".config/zls.json".text = builtins.toJSON (loadConfig "zls" { });
+      ".config/wluma/config.toml".text = std.serde.toTOML (loadConfig "wluma" { });
+    }
+    # Misc. files
+    // {
+      ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
+      ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
+    };
 
   home.sessionVariables = {
     "SUDO_PROMPT" = "[sudo 🐺] %p: ";
