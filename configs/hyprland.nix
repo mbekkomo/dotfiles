@@ -1,6 +1,7 @@
 { pkgs, ... }:
 let
   terminal = "alacritty";
+  runner = "wofi --show drun";
 in
 {
   exec-once = builtins.concatStringsSep ";" [
@@ -9,6 +10,8 @@ in
     "systemctl --user start hypridle.service"
     "(${pkgs.wluma}/bin/wluma &)"
   ];
+
+  monitor = ",preferred,auto,auto";
 
   bindel = [
     ",XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%+"
