@@ -2,6 +2,8 @@
 let
   terminal = "alacritty";
   runner = "wofi --show drun";
+
+  cursor_size = 30;
 in
 {
   exec-once = builtins.concatStringsSep ";" [
