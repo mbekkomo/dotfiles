@@ -140,12 +140,6 @@ in
 
   security.pam.services.hyprlock = {};
 
-  services.printing.enable = true;
-  services.printing.drivers = with pkgs; [
-    gutenprint
-    gutenprintBin
-    epson-201401w # incase my Epson L310 is being a bad bitch
-  ];
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -179,7 +173,6 @@ in
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
   ];
 
