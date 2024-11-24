@@ -567,6 +567,4 @@ in
     "nix-community"
     "mbekkomo"
   ];
-
-  gtk.enable = true;
 }
