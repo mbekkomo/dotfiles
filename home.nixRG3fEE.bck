@@ -169,7 +169,7 @@ in
       emmet-language-server
       zls
     ];
-    settings = loadConfig "helix/config" { };
+    settings = loadConfig "helix" { };
     languages = loadConfig "helix/languages" { };
   };
 
