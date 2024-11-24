@@ -85,7 +85,7 @@ in
     ".config/zls.json".text = builtins.toJSON (loadConfig "zls" { });
     ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
     ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
-    ".config/wluma/config.toml".text = std.serde.toTOML (loadConfig ./configs/wluma.nix { });
+    ".config/wluma/config.toml".text = std.serde.toTOML (loadConfig "wluma" { });
   };
 
   home.sessionVariables = {
@@ -169,8 +169,8 @@ in
       emmet-language-server
       zls
     ];
-    settings = loadConfig ./configs/helix.nix { };
-    languages = loadConfig ./configs/hx-langs.nix { };
+    settings = loadConfig "helix/config" { };
+    languages = loadConfig "helix/languages" { };
   };
 
   programs.alacritty = {
