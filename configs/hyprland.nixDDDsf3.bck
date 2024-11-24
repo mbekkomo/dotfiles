@@ -15,11 +15,6 @@ in
 
   monitor = ",preferred,auto,auto";
 
-  env = [
-    "XCURSOR_SIZE,${toString cursor_size}"
-    "HYPRCURSOR_SIZE,${toString cursor_size}"
-  ];
-
   bindel = [
     ",XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%+"
     ",XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%-"
