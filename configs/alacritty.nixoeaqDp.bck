@@ -14,7 +14,7 @@
     y = 2;
   };
 
-  window.opacity = 0.65;
+  window.opacity = 0.6;
   window.blur = true;
 
   terminal = {
