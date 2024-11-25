@@ -10,10 +10,10 @@ while getopts "o" x; do
 done
 
 if "$otp"; then
-  pass="pass otp -c"
+  pass=(pass otp -c)
   regex="^otp:.+"
 else
-  pass="pass -c"
+  pass=(pass -c)
   regex="^[^o][^t][^p][^:].+"
 fi
 
@@ -23,4 +23,4 @@ store=$(
     wofi --show dmenu
 )
 
-exec "$pass" "$store"
+exec "${pass[@]}" "$store"
