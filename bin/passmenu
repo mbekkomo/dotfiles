@@ -35,5 +35,8 @@ if "$otp"; then
   store="$_"
 fi
 
-msg=$("${pass[@]}" "$store")
-(( $? )) || exit 1
+if ! msg=$("${pass[@]}" "$store" 2>&1); then
+  notify-send -u critical -t 1300 password-store "$msg"
+else
+  notify-send -t 1300 password-store "$msg"
+fi
