@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -eo pipefail
 
 otp=false
 
@@ -36,4 +35,4 @@ if "$otp"; then
   store="$_"
 fi
 
-notify-send password-store "$("${pass[@]}" "$store")"
+exec "${pass[@]}" "$store"
