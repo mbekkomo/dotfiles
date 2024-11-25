@@ -1,3 +1,20 @@
 #!/usr/bin/env bash
 
-while getopts ""
+otp=false
+
+while getopts "o" x; do
+  case $x in
+    o) otp=true;;
+    *) exit 1;; # opts are handled by getopts
+  esac
+done
+
+if "$otp"; then
+  pass="pass otp -c"
+  regex="^otp:.+"
+else
+  pass="pass -c"
+  regex="^[^o][^t][^p][^:].+"
+fi
+
+fd --regex "$regex" -e gpg 
