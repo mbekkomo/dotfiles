@@ -17,4 +17,8 @@ else
   regex="^[^o][^t][^p][^:].+"
 fi
 
-fd --regex "$regex" -e gpg 
+store=$(
+  fd --regex "$regex" ~/.local/share/password-store -e gpg --format '{.}' |
+    sd ~/.local/share/password-store/ '' |
+    wofi --show dmenu
+)
