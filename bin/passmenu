@@ -24,7 +24,7 @@ store=$(
     sd ~/.local/share/password-store/ '' | {
       "$otp" && sd otp: ''
       ! "$otp" && cat
-    } | wofi -d -p "$prompt" -l top -H 15% -x 5
+    } | wofi -d -p "$prompt" -l top -H 15% -y 5
 )
 
 [[ -n "$store" ]] || exit 1
