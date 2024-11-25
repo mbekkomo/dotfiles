@@ -25,10 +25,4 @@ store=$(
     } | wofi --show dmenu
 )
 
-if "$otp"; then
-  : "$(basename "$store")"
-  : "$(dirname "$store")/otp:$_"
-  store="$_"
-fi
-
 exec "${pass[@]}" "$store"
