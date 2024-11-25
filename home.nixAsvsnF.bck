@@ -58,7 +58,6 @@ in
     micro
     moar
     glow
-    libnotify
 
     # Something that would ease me off
     fzf
