@@ -12,9 +12,11 @@ done
 if "$otp"; then
   pass=(pass otp -c)
   regex="^otp:.+"
+  prompt="OTP"
 else
   pass=(pass -c)
   regex="^[^o][^t][^p][^:].+"
+  prompt="Password"
 fi
 
 store=$(
@@ -22,7 +24,7 @@ store=$(
     sd ~/.local/share/password-store/ '' | {
       "$otp" && sd otp: ''
       ! "$otp" && cat
-    } | wofi --show dmenu
+    } | wofi -d -p "$prompt"
 )
 
 if "$otp"; then
