@@ -42,7 +42,6 @@ in
   boot.loader.systemd-boot.enable = lib.mkDefault false;
   boot.loader.refind.enable = true;
   boot.loader.refind.extraConfig = ''
-    enable_touch true
     include themes/rEFInd-minimal-dark/theme.conf
   '';
   boot.loader.efi.canTouchEfiVariables = true;
@@ -165,8 +164,9 @@ in
     "io.github.equicord.equibop" # Discord
     "im.nheko.Nheko" # Matrix
     "dev.toastbits.spmp" # Music
-    "io.itch.itch"
     "com.interversehq.qView"
+    "io.itch.itch"
+    "com.valvesoftware.Steam"
   ];
 
   services.udisks2.enable = true;
