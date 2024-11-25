@@ -19,9 +19,8 @@ fi
 
 store=$(
   fd --regex "$regex" ~/.local/share/password-store -e gpg --format '{.}' |
-    sd ~/.local/share/password-store/ '' | {
-      "$otp" && sd otp: ''
-    } | wofi --show dmenu
+    sd ~/.local/share/password-store/ '' |
+    wofi --show dmenu
 )
 
 exec "${pass[@]}" "$store"
