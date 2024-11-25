@@ -38,12 +38,14 @@ in
     layout = "dwindle";
   };
 
-  bind = let
-    passmenu = toString (root + /bin/passmenu);
-  in [
-    "SUPER, P, exec, ${passmenu}"
-    "SUPER + SHIFT, P, exec, ${passmenu} -o"
-  ];
+  bind =
+    let
+      passmenu = toString (root + /bin/passmenu);
+    in
+    [
+      "SUPER, P, exec, ${passmenu}"
+      "SUPER + SHIFT, P, exec, ${passmenu} -o"
+    ];
 
   bindel = [
     ",XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%+"

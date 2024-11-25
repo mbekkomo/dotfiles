@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   general = {
     lock_cmd = ''
       pidof hyprlock || hyprlock
