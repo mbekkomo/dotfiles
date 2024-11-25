@@ -24,8 +24,10 @@ store=$(
     sd ~/.local/share/password-store/ '' | {
       "$otp" && sd otp: ''
       ! "$otp" && cat
-    } | wofi -d -p "$prompt" -l bottom
+    } | wofi -d -p "$prompt" -l top
 )
+
+[[ -n "$store" ]] || exit 1
 
 if "$otp"; then
   : "$(basename "$store")"

@@ -24,7 +24,7 @@ store=$(
     sd ~/.local/share/password-store/ '' | {
       "$otp" && sd otp: ''
       ! "$otp" && cat
-    } | wofi -d -p "$prompt"
+    } | wofi -d -p "$prompt" -l bottom
 )
 
 if "$otp"; then
