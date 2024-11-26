@@ -15,11 +15,11 @@ while getopts "o" x; do
 done
 
 if "$otp"; then
-  pass=(pass otp show -c)
+  pass=(pass otp)
   regex="^otp:.+"
   prompt="OTP"
 else
-  pass=(pass show -c)
+  pass=(pass show)
   regex="^[^o][^t][^p][^:].+"
   prompt="Password"
 fi
@@ -40,4 +40,5 @@ if "$otp"; then
   store="$_"
 fi
 
-exec "${pass[@]}" "$store"
+set -e
+"${pass[@]}" "$store" | head -n1 | exec wl-copy
