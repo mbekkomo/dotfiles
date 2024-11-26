@@ -15,11 +15,11 @@ while getopts "o" x; do
 done
 
 if "$otp"; then
-  pass=(pass otp -c)
+  pass=(pass otp show -c)
   regex="^otp:.+"
   prompt="OTP"
 else
-  pass=(pass show)
+  pass=(pass show -c)
   regex="^[^o][^t][^p][^:].+"
   prompt="Password"
 fi
