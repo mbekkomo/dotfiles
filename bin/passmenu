@@ -19,7 +19,7 @@ if "$otp"; then
   regex="^otp:.+"
   prompt="OTP"
 else
-  pass=(pass -c)
+  pass=(pass show)
   regex="^[^o][^t][^p][^:].+"
   prompt="Password"
 fi
