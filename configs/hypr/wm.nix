@@ -53,8 +53,8 @@ in
       passmenu = toString (root + /bin/passmenu);
     in
     [
-      "Shift_L, P&W, exec, ${passmenu}"
-      "Shift_L, P&O&W, exec, ${passmenu} -o"
+      "Super_L, P&W, exec, ${passmenu}"
+      "Super_L, P&O&W, exec, ${passmenu} -o"
     ];
 
   bindel = [
