@@ -46,7 +46,6 @@ in
     [
       "SUPER, P, exec, ${passmenu}"
       "SUPER + SHIFT, P, exec, ${passmenu} -o"
-      "SUPER, V, exec, clipman pick -t wofi"
     ];
 
   bindel = [
