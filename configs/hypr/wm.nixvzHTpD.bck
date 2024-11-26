@@ -49,8 +49,8 @@ in
       passmenu = toString (root + /bin/passmenu);
     in
     [
-      "SUPER, P, exec, env WAYLAND_DISPLAY=wayland-1 ${passmenu}"
-      "SUPER + SHIFT, P, exec, env WAYLAND_DISPLAY=wayland-1 ${passmenu} -o"
+      "SUPER, P, exec, ${passmenu}"
+      "SUPER + SHIFT, P, exec, ${passmenu} -o"
       "SUPER, V, exec, alacritty --class clipse -e clipse"
     ];
 
