@@ -44,17 +44,14 @@ in
     "size 622 652, class:(clipse)"
   ];
 
-  bind = [
-    "SUPER, V, exec, alacritty --class clipse -e clipse"
-  ];
-
-  binds =
+  bind =
     let
       passmenu = toString (root + /bin/passmenu);
     in
     [
-      "Super_R, P&W, exec, ${passmenu}"
-      "Super_R, P&O&W, exec, ${passmenu} -o"
+      "SUPER, P, exec, bash -c '${passmenu} >/tmp/output 2>&1'"
+      "SUPER + SHIFT, P, exec, env WAYLAND_DISPLAY=wayland-1 ${passmenu} -o"
+      "SUPER, V, exec, alacritty --class clipse -e clipse"
     ];
 
   bindel = [
