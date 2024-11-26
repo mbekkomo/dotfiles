@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
-
-[[ -n "${WAYLAND_DISPLAY}" ]] || exit
+#!/usr/bin/env nix
+#! nix shell nixpkgs/nixos-unstable#fd nixpkgs/nixos-unstable#sd nixpkgs/nixos-unstable#pass nixpkgs/nixos-unstable#wl-clipboard nixpkgs/nixos-unstable#wofi --command bash
 
 otp=false
 
