@@ -49,7 +49,7 @@ in
       passmenu = toString (root + /bin/passmenu);
     in
     [
-      "SUPER, P, exec, env WAYLAND_DISPLAY=wayland-1 ${passmenu}"
+      "SUPER, P, exec, bash -c '${passmenu} >/tmp/output 2>&1'"
       "SUPER + SHIFT, P, exec, env WAYLAND_DISPLAY=wayland-1 ${passmenu} -o"
       "SUPER, V, exec, alacritty --class clipse -e clipse"
     ];
