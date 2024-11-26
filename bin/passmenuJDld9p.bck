@@ -41,4 +41,4 @@ if "$otp"; then
 fi
 
 set -e
-command "${pass[@]}" "$store" | head -n1 | exec wl-copy
+"${pass[@]}" "$store" | head -n1 | exec wl-copy
