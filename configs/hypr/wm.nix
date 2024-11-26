@@ -13,7 +13,7 @@ in
     "systemctl --user start hypridle.service"
     "wpaperd -d"
     "${pkgs.wluma}/bin/wluma &"
-    ''wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"''
+    "clipse -listen"
   ];
 
   monitor = ",preferred,auto,auto";
@@ -39,6 +39,11 @@ in
     layout = "dwindle";
   };
 
+  windowrulev2 = [
+    "float, class:(clipse)"
+    "size 622 652, class:(clipse)"
+  ];
+
   bind =
     let
       passmenu = toString (root + /bin/passmenu);
@@ -46,7 +51,7 @@ in
     [
       "SUPER, P, exec, ${passmenu}"
       "SUPER + SHIFT, P, exec, ${passmenu} -o"
-      "SUPER, V, exec, clipman pick -t wofi"
+      "SUPER, V, exec, alacritty --class clipse -e clipse"
     ];
 
   bindel = [
