@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-[[ -n "${WAYLAND_DISPLAY}" ]] || exit
+[[ -n "${WAYLAND_DISPLAY}" ]] || {
+  >&2 echo "No WAYLAND_DISPLAY found"
+  exit 1
+}
 
 otp=false
 
