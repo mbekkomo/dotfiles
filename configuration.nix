@@ -66,6 +66,9 @@ in
     udisks
   ];
 
+  # Enable nix-ld
+  programs.nix-ld.dev.enable = true;
+
   networking.networkmanager.enable = true;
   networking.networkmanager.dns = "none";
   networking.nameservers = [
