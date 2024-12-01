@@ -44,17 +44,14 @@ in
     "size 622 652, class:(clipse)"
   ];
 
-  bind = [
-    "SUPER, V, exec, alacritty --class clipse -e clipse"
-  ];
-
-  binds =
+  bind =
     let
       passmenu = toString (root + /bin/passmenu);
     in
     [
-      "Super_L, P&W, exec, ${passmenu}"
-      "Super_L, P&O&W, exec, ${passmenu} -o"
+      "SUPER, V, exec, alacritty --class clipse -e clipse"
+      "CTRL + SUPER, P, exec, ${passmenu}"
+      "CTRL + SUPER, R, exec, ${passmenu} -o"
     ];
 
   bindel = [
