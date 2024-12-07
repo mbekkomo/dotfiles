@@ -2,5 +2,5 @@
 
 set session (begin
     zellij list-sessions
-    echo "New session"
+    echo -e "\e[mNew session"
 end | gum choose --height 5 --header "Sessions")
