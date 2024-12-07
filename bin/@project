@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 set sessions
-zellij list-sessions | while read -l line
+zellij list-sessions -n | while read -l line
     echo $line | read -d ' ' session
     set -a sessions $session
 end
