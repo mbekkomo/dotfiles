@@ -1,1 +1,6 @@
 #!/usr/bin/env fish
+
+set session (begin
+    zellij list-sessions
+    echo "New session"
+end)
