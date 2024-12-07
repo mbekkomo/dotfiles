@@ -16,5 +16,7 @@ if test $session = "-New session-"
     set session_name (basename $PWD | sd "[^a-zA-Z0-9]" "-")
     zellij attach -b $session_name
     zellij edit . --width 70%
-    test -f $PWD/flake.nix && zellij action
-end
+    zellij action move-pane left
+    if test -f $PWD/flake.nix
+        zellij run --
+    end
