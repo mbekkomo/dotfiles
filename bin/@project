@@ -22,7 +22,7 @@ if test $session = "-New session-"
     else
         echo $session
     end)
-    zellij attach -b $session_name
+    zellij attach -c $session_name
     zellij edit .
     zellij --session $session_name action move-pane left
     zellij --session $session_name action move-focus right
