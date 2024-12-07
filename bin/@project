@@ -12,10 +12,14 @@ set session (begin
 end | gum choose --height 5 --header "Sessions")
 
 if test $session = "-New session-"
+
+
     contains sessions $session && exec zellij attach $session
     set session_name (basename $PWD | sd "[^a-zA-Z0-9]" "-")
     zellij attach -b $session_name
     zellij edit . --width 70%
     zellij action move-pane left
     test -f $PWD/flake.nix && zellij action write-chars "nixd --impure"\n
-    zellij attach
+    exec zellij attach
+else
+    exec zellij attach $session
