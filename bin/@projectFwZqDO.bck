@@ -6,3 +6,6 @@ set session (begin
 end | gum choose --height 5 --header "Sessions")
 
 if test $session = "-New session-"
+    set session_name (basename $PWD | sd "[^a-zA-Z0-9]" "-")
+    zellij attach
+end
