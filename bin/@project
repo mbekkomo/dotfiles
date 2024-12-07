@@ -1,3 +1,1 @@
-#!/usr/bin/env bash
-
-zellij session
+#!/usr/bin/env fish
