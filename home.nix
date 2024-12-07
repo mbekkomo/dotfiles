@@ -68,6 +68,7 @@ in
     zoxide
     bat
     sigi
+    gum
 
     # For hyprland
     dolphin
