@@ -17,4 +17,5 @@ if test $session = "-New session-"
     zellij attach -b $session_name
     zellij edit . --width 70%
     zellij action move-pane left
-    test -f $PWD/flake.nix && zellij
+    test -f $PWD/flake.nix && zellij action write-chars "nixd --impure"\n
+    zellij attach
