@@ -15,7 +15,10 @@ end | gum choose --height 5 --header "Sessions")
 
 if test $session = "-New session-"
     set session (gum input --header "Session name" --placeholder $default_session_name)
-    contains sessions $session && exec zellij attach $session
+    if contains sessions $session
+        zellij attach $session
+        exit $status
+    end
 
     set session_name "project:"(if test -z "$session"
         echo $default_session_name
@@ -30,5 +33,6 @@ if test $session = "-New session-"
     zellij attach
     exit $status
 else
-    exec zellij attach $session
+    zellij attach $session
+    exit $status
 end
