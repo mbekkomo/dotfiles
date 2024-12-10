@@ -27,7 +27,8 @@ if test $session = "-New session-"
     zellij action move-pane left
     zellij action focus-next-pane
     test -f $PWD/flake.nix && zellij action write-chars "nixd --impure"\n
-    exec zellij attach
+    zellij attach
+    exit $status
 else
     exec zellij attach $session
 end
