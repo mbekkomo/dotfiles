@@ -236,7 +236,7 @@ in
 
   programs.direnv = {
     enable = true;
-    nix-direnv = true;
+    nix-direnv.enable = true;
   };
 
   programs.nix-index.enable = true;
