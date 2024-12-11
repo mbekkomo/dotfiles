@@ -97,7 +97,7 @@ in
 
   home.sessionVariables = {
     "SUDO_PROMPT" = "[sudo 🐺] %p: ";
-    "PAGER" = "${pkgs.moar}/bin/moar";
+    "PAGER" = "moar";
   };
 
   catppuccin.flavor = "mocha";
@@ -232,6 +232,11 @@ in
         (plugin autopair)
         (plugin git-abbr)
       ];
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv = true;
   };
 
   programs.nix-index.enable = true;
