@@ -81,6 +81,7 @@ in
 
     # stupid bloat shits why the fuck do i even install these
     dissent
+    cloudflare-warp
   ];
 
   home.file =
