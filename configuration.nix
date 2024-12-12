@@ -174,6 +174,8 @@ in
 
   services.udisks2.enable = true;
 
+  services.cloudflare-warp.enable = true;
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
     xdg-desktop-portal-hyprland
