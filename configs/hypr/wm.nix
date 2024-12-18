@@ -49,7 +49,7 @@ in
       passmenu = toString (root + /bin/passmenu);
     in
     [
-      "SUPER, V, exec, alacritty --class clipse -e clipse"
+      "CTRL + SUPER, V, exec, alacritty --class clipse -e clipse"
       "CTRL + SUPER, P, exec, ${passmenu}"
       "CTRL + SUPER, R, exec, ${passmenu} -o"
     ];
